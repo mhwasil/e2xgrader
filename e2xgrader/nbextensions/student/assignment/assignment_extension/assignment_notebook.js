@@ -162,8 +162,9 @@ define([
         let old_paste_cell_above = Notebook.prototype.paste_cell_above;
         let old_paste_cell_below = Notebook.prototype.paste_cell_below;
 
-        // Remove Ctrl-V command shortcut
+        // Remove Ctrl-V command shortcut and replace with no-op
         Jupyter.keyboard_manager.command_shortcuts.remove_shortcut('Cmdtrl-V');
+        Jupyter.keyboard_manager.command_shortcuts.add_shortcut('Cmdtrl-V', () => {});
 
         function sanitize_clipboard(clipboard) {
             if (clipboard === null) {
