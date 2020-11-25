@@ -164,7 +164,7 @@ define([
 
         // Remove Ctrl-V command shortcut and replace with no-op
         Jupyter.keyboard_manager.command_shortcuts.remove_shortcut('Cmdtrl-V');
-        Jupyter.keyboard_manager.command_shortcuts.add_shortcut('Cmdtrl-V', () => {});
+        Jupyter.notebook.keyboard_manager.command_shortcuts.add_shortcut('Cmdtrl-V', () => {});
 
         function sanitize_clipboard(clipboard) {
             if (clipboard === null) {
